@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AgriForecast
 
 AgriForecast is a web-based Farm Resource Management System for managing farmer records, cooperatives, input distribution, assistance monitoring, food supply, staple food records, market prices, weather forecasts, advisories, reports, and users.
@@ -230,3 +231,7 @@ Password: janel123
 (Farmer)
 Username: ck
 Password: ck123
+=======
+# agriforecast.github.io
+Agriforecast is an agricultural management system
+>>>>>>> 53e2a3b60a5b828f776706f615e64f815e416254
