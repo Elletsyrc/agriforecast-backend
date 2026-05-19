@@ -14,8 +14,8 @@ COPY microservice/ /app/microservice/
 WORKDIR /app/microservice
 
 # Upgrade pip and install dependencies
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install -r requirements.txt
+RUN python3 -m pip install --upgrade pip --break-system-packages
+RUN python3 -m pip install -r requirements.txt --break-system-packages
 
 # Expose port
 EXPOSE 10000
