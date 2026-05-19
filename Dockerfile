@@ -1,8 +1,8 @@
 # Base image with PHP and Apache
 FROM php:8.2-apache
 
-# Install Python and pip
-RUN apt-get update && apt-get install -y python3 python3-pip
+# Install Python and venv
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv
 
 # Copy PHP files
 COPY api/ /var/www/html/api/
@@ -13,9 +13,11 @@ COPY hash.php /var/www/html/
 COPY microservice/ /app/microservice/
 WORKDIR /app/microservice
 
-# Upgrade pip and install dependencies
-RUN python3 -m pip install --upgrade pip --break-system-packages
-RUN python3 -m pip install -r requirements.txt --break-system-packages
+# Create virtual environment and install dependencies
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
 # Expose port
 EXPOSE 10000
